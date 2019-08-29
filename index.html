@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" >
+		<title>BOOK DESIGN</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="css/main.css">
+		<style>
+		{
+    box-sizing: border-box;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.column{
+    flex: 50%;
+    padding:10px;
+    height: 300px;
+}
+body{
+    background-color: violet;
+}
+
+div.left_side{
+  margin: 80px;
+    }
+div.right_side{
+  background-color: white;
+  width: 300px;
+  border: 2px solid;
+  padding: 230px;
+  margin: 80px;
+    }
+		
+		
+		
+		</style>
+	</head>
+	<body>
+
+	    <div class="row no-gutters">
+		    
+		  	<div class="col-md-6 no-gutters">
+		  		<div class="left_side d-flex justify-content-center align-items-center">
+
+	               <form class="needs-validation" onclick="write_below()" novalidate>
+	                
+		                <div class="container">
+		                
+		                  <div class="form-row">
+		                
+			                  <div class="form-groupc col-md-6">
+			                      Book title
+			                      <input type="text" class="form-control" font-color="blue" style="background-color:white;" id='Book title'>		  	
+			                  </div>
+		                	 
+
+			                  <div class="form-group col-md-6">
+			                      Book subtitle
+			                      <input type="text" class="form-control" font-color="blue" style="background-color:white;" id='Book subtitle'>
+			                   </div>
+		                  	  
+			                  <div class="form-group col-md-6">
+			                      Author name
+			                      <input type="text" class="form-control" font-color="blue" style="background-color:white;" id='Author'>
+			                  </div>
+							                  
+			                  <div class="form-group col-md-6">
+			                      Background color
+			                      <input type="text"  class="form-control" font-color="blue" style="background-color:white;" id='BookBg'>
+			                  </div>
+		                	 
+			                  <div class="form-group col-md-6">
+			                      Publisher
+			                      <input type="User name" class="form-control" id='Publisher' font-color="blue" style="background-color:white;" id='printPublisher'>
+			                   </div>
+		                   	   
+			                   <div class="form-group col-md-6">
+			                      Publishing year
+			                      <input type="number" class="form-control" id='year' placeholder="year" font-color="blue" style="background-color:white;">
+			       
+			       
+			                    </div>
+<!-- EDIT:Add an onclick field in the button -->
+		                 		<button class="btn btn-generate" type="submit" font-color="blue" style="background-color:white;" onclick="return write_below();">Generate</button>
+		           
+		                   </div>
+		            	</div>
+	                </form>      
+	            </div>        
+                
+            </div>
+			
+                <div class="col-md-6 no-gutters">
+<!-- EDIT: Add an id to the div	-->
+                	<div class="right_side d-flex justify-content-center align-items-center" id="bgColor">
+                		<div id="printTite"></div>
+						<div id="printSub"></div>
+						<div id="printAuthor"></div>
+						<div id="printPublisher"></div>
+						<div id="printPubYear"></div>
+						<script>
+							
+							function write_below(form)
+							{
+// EDIT: Read the value of the text input
+								var color = document.getElementById('BookBg');
+// EDIT: Set the background of the whole div
+								document.getElementById('bgColor').style.backgroundColor = color.value ;
+							
+								var title = document.getElementById('Book title');
+								document.getElementById('printTite').innerHTML= title.value;
+							
+								var sub=document.getElementById('Book subtitle');
+								document.getElementById('printSub').innerHTML= sub.value;
+							
+								var input = document.getElementById('Author');
+								document.getElementById('printAuthor').innerHTML="written by "+ input.value;
+							
+								var input = document.getElementById('Publisher');
+								document.getElementById('printPublisher').innerHTML = "published by "+ input.value;
+							
+								var input = document.getElementById('year');
+								document.getElementById('printPubYear').innerHTML="in "+ input.value;
+				
+							return false;
+							}
+						</script>
+					</div>
+				</div>
+			</div>
+	</body>
+</html>

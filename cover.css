@@ -1,0 +1,29 @@
+.box {
+    box-sizing: border-box;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.column{
+    flex: 50%;
+    padding:10px;
+    height: 300px;
+}
+body{
+    background-color: violet;
+}
+
+div.left_side{
+  margin: 80px;
+    }
+div.right_side{
+  background-color: white;
+  width: 300px;
+  border: 2px solid;
+  padding: 230px;
+  margin: 80px;
+    }
